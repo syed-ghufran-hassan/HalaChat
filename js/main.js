@@ -95,6 +95,8 @@ let languageIndex = 0;
 function addMoreTags() {
     const tagsContainer = document.querySelector('.lang-opt-content');
 
+    if (tagsContainer.children.length >= 100) return; // Prevent excessive tag growth
+
     for (let i = 0; i < 20; i++) {
         const newTag = document.createElement('span');
         newTag.classList.add('tag', 'font-semi-bold', 'rounded-4', 'text-capitalize', 'text-white');
@@ -110,6 +112,7 @@ function addMoreTags() {
     toggleTagsBtn.classList.remove('fa-plus-circle');
     toggleTagsBtn.classList.add('fa-minus-circle');
 }
+
 
 // Function to remove added tags
 function removeAddedTags() {
